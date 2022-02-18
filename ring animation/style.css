@@ -1,0 +1,119 @@
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #111;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: -30px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top: 4px solid #24ecff;
+  animation: animate 2s linear infinite;
+}
+.container .ring::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 15px;
+  height: 15px;
+  background: #24ecff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px #24ecff55, 0px 0px 0px 10px #24ecff22,
+    0px 0px 0px 20px #24ecff11, 0px 0px 20px #24ecff, 0px 0px 50px #24ecff;
+}
+
+.container .ring:nth-child(3) {
+  position: absolute;
+  top: -66.66px;
+}
+
+.container .ring:nth-child(2) {
+  animation: animate2 2s linear infinite;
+  animation-delay: -1s;
+  border-top: 4px solid transparent;
+  border-left: 4px solid #7fff24;
+}
+
+.container .ring:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: initial;
+  bottom: 12px;
+  left: 12px;
+  width: 15px;
+  height: 15px;
+  background: #7fff24;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px #7fff2455, 0px 0px 0px 10px #7fff2422,
+    0px 0px 0px 20px #7fff2411, 0px 0px 20px #7fff24, 0px 0px 50px #7fff24;
+}
+
+.container .ring:nth-child(3) {
+  animation: animate2 2s linear infinite;
+  animation-delay: -3s;
+  position: absolute;
+  top: -66.66px;
+  border-top: 4px solid transparent;
+  border-left: 4px solid rgb(216, 12, 216);
+}
+.container .ring:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  top: initial;
+  bottom: 12px;
+  left: 12px;
+  width: 15px;
+  height: 15px;
+  background: rgb(216, 12, 216);
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px rgb(216, 12, 216, 0.5),
+    0px 0px 0px 10px rgb(216, 12, 216, 0.2),
+    0px 0px 0px 20px rgb(216, 12, 216, 0.1), 0px 0px 20px rgb(216, 12, 216, 0.1),
+    0px 0px 50px rgb(216, 12, 216);
+}
+.container p {
+  position: absolute;
+  color: #fff;
+  font-size: 1.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  bottom: -80px;
+  letter-spacing: 0.15em;
+}

@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+  --clr: #fff;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #222327;
+}
+
+.navigation {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 450px;
+  height: 70px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.navigation ul {
+  display: flex;
+  position: relative;
+  width: 350px;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 2em;
+  text-align: center;
+  transition: 0.5s;
+  color: var(--clr);
+}
+
+.navigation ul li.active a .icon {
+  font-size: 1.5em;
+  transform: translateY(-20px);
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  color: var(--clr);
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.indicator {
+  position: absolute;
+  display: flex;
+  top: -15%;
+  width: 90px;
+  height: 90px;
+  background: #29fdf2;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+  box-shadow: 1px 19px 44px -6px #81fd29;
+  background: #81fd29;
+  transform: translateX(calc(-10px));
+}
+.navigation ul li:nth-child(2).active ~ .indicator {
+  box-shadow: 1px 19px 44px -6px #29fdf2;
+  background: #29fdf2;
+  transform: translateX(calc(61px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator {
+  box-shadow: 1px 19px 44px -6px #fd29f6;
+  background: #fd29f6;
+  transform: translateX(calc(65px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator {
+  box-shadow: 1px 19px 44px -6px #fdc129;
+  background: #fdc129;
+  transform: translateX(calc(67px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator {
+  box-shadow: 1px 19px 44px -6px #fd3e29;
+  background: #fd3e29;
+  transform: translateX(calc(68px * 4));
+}

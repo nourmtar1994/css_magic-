@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f8f8;
+}
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.412);
+  border-radius: 20px;
+  display: flex;
+}
+
+.card .ribbon {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 120px;
+  height: 120px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.card .ribbon::before {
+  display: flex;
+  position: absolute;
+  top: 40%;
+  left: -20px;
+  content: "";
+  width: 150%;
+  height: 30px;
+  background: rgb(74, 245, 228);
+  transform: rotate(-45deg) translateY(-25px);
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.card .ribbon::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: rgb(62, 187, 175);
+  z-index: 1;
+  box-shadow: 110px -110px rgb(62, 197, 184);
+}
+.card .ribbon .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg) translateY(36px) translateX(-20px);
+  z-index: 3;
+  color: royalblue;
+  text-transform: uppercase;
+}
